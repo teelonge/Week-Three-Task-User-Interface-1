@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Inherits from the parent AppCompat for rating bar and changes the X and Y scale. -->
+    <style name="ratingBarProperties" parent="Widget.AppCompat.RatingBar.Small">
+        <item name="android:rating">5</item>
+        <item name="android:scaleX">1.3</item>
+        <item name="android:scaleY">1.3</item>
+    </style>
+
+    <!-- Changes the backgroundColour and cardCornerRadius for each outerCardView in night mode
+         using the color attribute as defined in color(night). -->
+    <style name="outerCardViewProperties">
+        <item name="android:backgroundTint">@color/green</item>
+        <item name="cardCornerRadius">@dimen/outerCardViewCornerRadius</item>
+    </style>
+
+    <!-- Changes the cardCornerRadius, stroke color and width for each innerCardView in night mode
+         using the color attribute as defined for color(night). -->
+    <style name="innerCardViewProperties">
+        <item name="cardCornerRadius">@dimen/innerCardViewCornerRadius</item>
+        <item name="strokeColor">@color/red</item>
+        <item name="strokeWidth">@dimen/innerCardViewStrokeWidth</item>
+    </style>
+
+
+</resources>

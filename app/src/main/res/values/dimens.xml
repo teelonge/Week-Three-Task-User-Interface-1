@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Dimensions for the layouts, outerCardViews and InnerCardViews-->
+
+    <dimen name="layoutShapeRadius">20dp</dimen>
+    <dimen name="layoutMarginStart1">32dp</dimen>
+    <dimen name="layoutMarginStart2">8dp</dimen>
+    <dimen name="layoutMarginEnd1">32dp</dimen>
+    <dimen name="layoutMarginEnd2">8dp</dimen>
+    <dimen name="layoutMarginTopAndBottom">8dp</dimen>
+
+    <dimen name="outerCardViewLayoutDimen">85dp</dimen>
+    <dimen name="outerCardViewCornerRadius">42dp</dimen>
+    <dimen name="outerCardViewMarginTop">16dp</dimen>
+
+    <dimen name="innerCardViewLayoutDimen">80dp</dimen>
+    <dimen name="innerCardViewCornerRadius">40dp</dimen>
+    <dimen name="innerCardViewStrokeWidth">4dp</dimen>
+
+
+    <dimen name="newOpponentDimension">70dp</dimen>
+    <dimen name="newOpponentCornerRadius">35dp</dimen>
+    <dimen name="newOpponentMarginBottom">32dp</dimen>
+
+
+</resources>

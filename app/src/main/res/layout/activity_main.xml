@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/layout_background">
+
+
+    <!-- Image view for the back button. -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/back_button"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24"
+        app:tint="@color/green" />
+
+    <!-- Tune image that when clicked changes the theme from light to dark mode and vice versa. -->
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:gravity="center_horizontal"
+        android:text="@string/title"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.444" />
+
+    <ImageView
+        android:id="@+id/imgTune"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/changetheme"
+        android:foregroundGravity="center_vertical"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_tune_24"
+        app:tint="@color/green" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.07061399" />
+
+    <!-- Layout for the first opponent. -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/firstOpponentLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/layoutMarginStart1"
+        android:layout_marginTop="@dimen/layoutMarginTopAndBottom"
+        android:layout_marginEnd="@dimen/layoutMarginEnd2"
+        android:layout_marginBottom="@dimen/layoutMarginTopAndBottom"
+        android:background="@drawable/layout_shape"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline4"
+        app:layout_constraintVertical_bias="1.0">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/outerFirstCardView"
+            style="@style/outerCardViewProperties"
+            android:layout_width="@dimen/outerCardViewLayoutDimen"
+            android:layout_height="@dimen/outerCardViewLayoutDimen"
+            android:layout_marginTop="@dimen/outerCardViewMarginTop"
+            app:layout_constraintBottom_toTopOf="@+id/txtFirstOpponentName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/innerFirstCardView"
+                style="@style/innerCardViewProperties"
+                android:layout_width="@dimen/innerCardViewLayoutDimen"
+                android:layout_height="@dimen/innerCardViewLayoutDimen"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/imgFirstOpponent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/arrow"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/oliver_queen" />
+            </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/txtFirstOpponentName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/oliver_queen"
+            app:layout_constraintBottom_toTopOf="@+id/firstOpponentRatingBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/outerFirstCardView" />
+
+        <TextView
+            android:id="@+id/txtFirstOpponentRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/firstOpponentRatingValue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/firstOpponentRatingBar" />
+
+        <RatingBar
+            android:id="@+id/firstOpponentRatingBar"
+            style="@style/ratingBarProperties"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="4"
+            app:layout_constraintBottom_toTopOf="@+id/txtFirstOpponentRating"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtFirstOpponentName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Layout for the second opponent. -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/secondOpponentLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/layoutMarginStart2"
+        android:layout_marginTop="@dimen/layoutMarginTopAndBottom"
+        android:layout_marginEnd="@dimen/layoutMarginEnd1"
+        android:layout_marginBottom="@dimen/layoutMarginTopAndBottom"
+        android:background="@drawable/layout_shape"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/guideline4">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/outerSecondCardView"
+            style="@style/outerCardViewProperties"
+            android:layout_width="@dimen/outerCardViewLayoutDimen"
+            android:layout_height="@dimen/outerCardViewLayoutDimen"
+            android:layout_marginTop="@dimen/outerCardViewMarginTop"
+            app:layout_constraintBottom_toTopOf="@+id/txtSecondOpponentName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/innerSecondCardView"
+                style="@style/innerCardViewProperties"
+                android:layout_width="@dimen/innerCardViewLayoutDimen"
+                android:layout_height="@dimen/innerCardViewLayoutDimen"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/imgSecondOpponent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/chess"
+                    android:src="@drawable/magnus_carlsen" />
+            </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/txtSecondOpponentName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/magnus_carlsen"
+            app:layout_constraintBottom_toTopOf="@+id/secondOpponentRatingBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/outerSecondCardView" />
+
+        <TextView
+            android:id="@+id/txtSecondOpponentRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/secondOpponentRatingValue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/secondOpponentRatingBar" />
+
+        <RatingBar
+            android:id="@+id/secondOpponentRatingBar"
+            style="@style/ratingBarProperties"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="2"
+            android:rating="3"
+            app:layout_constraintBottom_toTopOf="@+id/txtSecondOpponentRating"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSecondOpponentName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Layout for the third opponent. -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/thirdOpponentLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/layoutMarginStart1"
+        android:layout_marginTop="@dimen/layoutMarginTopAndBottom"
+        android:layout_marginEnd="@dimen/layoutMarginEnd2"
+        android:layout_marginBottom="@dimen/layoutMarginTopAndBottom"
+        android:background="@drawable/layout_shape"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/outerThirdCardView"
+            style="@style/outerCardViewProperties"
+            android:layout_width="@dimen/outerCardViewLayoutDimen"
+            android:layout_height="@dimen/outerCardViewLayoutDimen"
+            android:layout_marginTop="@dimen/outerCardViewMarginTop"
+            app:layout_constraintBottom_toTopOf="@+id/txtThirdOpponentName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/innerThirdCardView"
+                style="@style/innerCardViewProperties"
+                android:layout_width="@dimen/innerCardViewLayoutDimen"
+                android:layout_height="@dimen/innerCardViewLayoutDimen"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/imgThirdOpponent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/suits"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/harvey" />
+            </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/txtThirdOpponentName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/harvey_specter"
+            app:layout_constraintBottom_toTopOf="@+id/thirdOpponentRatingBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/outerThirdCardView" />
+
+        <TextView
+            android:id="@+id/txtThirdOpponentRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/thirdOpponentRatingValue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/thirdOpponentRatingBar" />
+
+        <RatingBar
+            android:id="@+id/thirdOpponentRatingBar"
+            style="@style/ratingBarProperties"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/txtThirdOpponentRating"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtThirdOpponentName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Layout for the fourth opponent. -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fourthOpponentLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/layoutMarginStart2"
+        android:layout_marginTop="@dimen/layoutMarginTopAndBottom"
+        android:layout_marginEnd="@dimen/layoutMarginEnd1"
+        android:layout_marginBottom="@dimen/layoutMarginTopAndBottom"
+        android:background="@drawable/layout_shape"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/guideline">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/outerFourthCardView"
+            style="@style/outerCardViewProperties"
+            android:layout_width="@dimen/outerCardViewLayoutDimen"
+            android:layout_height="@dimen/outerCardViewLayoutDimen"
+            android:layout_marginTop="@dimen/outerCardViewMarginTop"
+            app:layout_constraintBottom_toTopOf="@+id/txtFourthOpponentName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.39">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/innerFourthCardView"
+                style="@style/innerCardViewProperties"
+                android:layout_width="@dimen/innerCardViewLayoutDimen"
+                android:layout_height="@dimen/innerCardViewLayoutDimen"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/imgFourthOpponent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/gameofthrones"
+                    android:src="@drawable/danerys" />
+            </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/txtFourthOpponentName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/daenerys_t"
+            app:layout_constraintBottom_toTopOf="@+id/fourthOpponentRatingBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/outerFourthCardView" />
+
+        <TextView
+            android:id="@+id/txtFourthOpponentRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fourthOpponentRatingValue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fourthOpponentRatingBar" />
+
+        <RatingBar
+            android:id="@+id/fourthOpponentRatingBar"
+            style="@style/ratingBarProperties"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="3"
+            app:layout_constraintBottom_toTopOf="@+id/txtFourthOpponentRating"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtFourthOpponentName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Layout for the fifth opponent. -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fifthOpponentLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="@dimen/layoutMarginTopAndBottom"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="@dimen/layoutMarginTopAndBottom"
+        android:background="@drawable/layout_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline2">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/outerFifthCardView"
+            style="@style/outerCardViewProperties"
+            android:layout_width="@dimen/outerCardViewLayoutDimen"
+            android:layout_height="@dimen/outerCardViewLayoutDimen"
+            android:layout_marginTop="@dimen/outerCardViewMarginTop"
+            app:layout_constraintBottom_toTopOf="@+id/txtFifthOpponentName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/innerFifthCardView"
+                style="@style/innerCardViewProperties"
+                android:layout_width="@dimen/innerCardViewLayoutDimen"
+                android:layout_height="@dimen/innerCardViewLayoutDimen"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/imgFifthOpponent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/boxer"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/aj" />
+            </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/txtFifthOpponentName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/anthony_joshua"
+            app:layout_constraintBottom_toTopOf="@+id/fifthOpponentRatingBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/outerFifthCardView" />
+
+        <TextView
+            android:id="@+id/txtFifthOpponentRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fifthOpponentRatingValue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fifthOpponentRatingBar" />
+
+        <RatingBar
+            android:id="@+id/fifthOpponentRatingBar"
+            style="@style/ratingBarProperties"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/txtFifthOpponentRating"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtFifthOpponentName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Layout for the selecting a new opponent. -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/newOpponentLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/layoutMarginStart2"
+        android:layout_marginTop="@dimen/layoutMarginTopAndBottom"
+        android:layout_marginEnd="@dimen/layoutMarginEnd1"
+        android:layout_marginBottom="@dimen/layoutMarginTopAndBottom"
+        android:background="@drawable/layout_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/guideline2">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/innerChooseCardView"
+            style="@style/newOpponentCardViewProperties"
+            android:layout_width="@dimen/newOpponentDimension"
+            android:layout_height="@dimen/newOpponentDimension"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/txtChooseOpponentName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:contentDescription="@string/add_new_opponent"
+                app:srcCompat="@drawable/ic_baseline_add_24" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/txtChooseOpponentName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/newOpponentMarginBottom"
+            android:gravity="center"
+            android:text="@string/add_new_opponent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/innerChooseCardView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.38" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6996381" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

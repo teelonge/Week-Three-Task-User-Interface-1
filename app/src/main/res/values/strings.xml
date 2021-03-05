@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Week-3-Task(UI)</string>
+    <string name="oliver_queen">Oliver Queen</string>
+    <string name="firstOpponentRatingValue">2385</string>
+    <string name="harvey_specter">Harvey Specter</string>
+    <string name="thirdOpponentRatingValue">3200</string>
+    <string name="anthony_joshua">Anthony Joshua</string>
+    <string name="fifthOpponentRatingValue">3548</string>
+    <string name="magnus_carlsen">Magnus Carlsen</string>
+    <string name="secondOpponentRatingValue">423</string>
+    <string name="daenerys_t">Daenerys T.</string>
+    <string name="fourthOpponentRatingValue">1243</string>
+    <string name="add_new_opponent">Add New Opponent</string>
+    <string name="title">Choose Opponent</string>
+    <string name="back_button">back_button</string>
+    <string name="arrow">arrow</string>
+    <string name="suits">suits</string>
+    <string name="boxer">boxer</string>
+    <string name="gameofthrones">gameOfThrones</string>
+    <string name="chess">chess</string>
+    <string name="changetheme">changeTheme</string>
+</resources>
